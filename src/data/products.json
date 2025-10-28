@@ -1,16 +1,166 @@
 [
   {
     "id": 1,
-    "name": "Camiseta Negra",
-    "price": 19.99,
-    "image": "/images/shirt-black.jpg",
-    "category": "Ropa"
+    "name": "Auriculares inalámbricos Pro",
+    "price": 79.99,
+    "image": "/images/headphones.jpg",
+    "images": ["/images/headphones.jpg", "/images/headphones-2.jpg"],
+    "category": "Audio",
+    "subcategory": "Auriculares",
+    "featured": true,
+    "description": "Auriculares Bluetooth con cancelación activa de ruido, 30h de batería y micrófono integrado."
   },
   {
     "id": 2,
+    "name": "Altavoz Bluetooth Mini",
+    "price": 29.99,
+    "image": "/images/speaker.jpg",
+    "images": ["/images/speaker.jpg"],
+    "category": "Audio",
+    "subcategory": "Altavoces",
+    "featured": true,
+    "description": "Altavoz portátil resistente al agua con 10h de reproducción."
+  },
+  {
+    "id": 3,
+    "name": "Barra de sonido 2.1",
+    "price": 149.99,
+    "image": "/images/soundbar.jpg",
+    "images": ["/images/soundbar.jpg"],
+    "category": "Audio",
+    "subcategory": "Altavoces",
+    "featured": false,
+    "description": "Barra de sonido con subwoofer inalámbrico y conexión HDMI ARC."
+  },
+  {
+    "id": 4,
+    "name": "Camiseta Negra Premium",
+    "price": 19.99,
+    "image": "/images/shirt-black.jpg",
+    "images": ["/images/shirt-black.jpg"],
+    "category": "Ropa",
+    "subcategory": "Camisetas",
+    "featured": true,
+    "description": "Camiseta de algodón orgánico, corte regular, disponible en varias tallas."
+  },
+  {
+    "id": 5,
+    "name": "Pantalón Jogger Unisex",
+    "price": 39.99,
+    "image": "/images/joggers.jpg",
+    "images": ["/images/joggers.jpg"],
+    "category": "Ropa",
+    "subcategory": "Pantalones",
+    "featured": false,
+    "description": "Joggers cómodos con bolsillos laterales y cintura elástica ajustable."
+  },
+  {
+    "id": 6,
     "name": "Zapatillas Urbanas",
     "price": 49.99,
     "image": "/images/sneakers.jpg",
-    "category": "Calzado"
+    "images": ["/images/sneakers.jpg"],
+    "category": "Calzado",
+    "subcategory": "Zapatillas",
+    "featured": false,
+    "description": "Zapatillas con suela de goma antideslizante y plantilla acolchada."
+  },
+  {
+    "id": 7,
+    "name": "Botines de Cuero",
+    "price": 89.99,
+    "image": "/images/boots.jpg",
+    "images": ["/images/boots.jpg"],
+    "category": "Calzado",
+    "subcategory": "Botines",
+    "featured": true,
+    "description": "Botines de cuero genuino, resistentes y elegantes para el uso diario."
+  },
+  {
+    "id": 8,
+    "name": "Mochila Urbana",
+    "price": 59.99,
+    "image": "/images/backpack.jpg",
+    "images": ["/images/backpack.jpg"],
+    "category": "Accesorios",
+    "featured": true,
+    "description": "Mochila resistente, compartimento para laptop de 15\" y puerto USB."
+  },
+  {
+    "id": 9,
+    "name": "Gorra Snapback",
+    "price": 24.99,
+    "image": "/images/hat.jpg",
+    "images": ["/images/hat.jpg"],
+    "category": "Accesorios",
+    "subcategory": "Gorras",
+    "featured": false,
+    "description": "Gorra moderna con diseño ajustable y logo bordado."
+  },
+  {
+    "id": 10,
+    "name": "Reloj Inteligente FitBand",
+    "price": 99.99,
+    "image": "/images/smartwatch.jpg",
+    "images": ["/images/smartwatch.jpg"],
+    "category": "Tecnología",
+    "subcategory": "Wearables",
+    "featured": true,
+    "description": "Reloj inteligente con monitor de ritmo cardíaco, pasos y notificaciones."
+  },
+  {
+    "id": 11,
+    "name": "Smartphone X12",
+    "price": 499.99,
+    "image": "/images/smartphone.jpg",
+    "images": ["/images/smartphone.jpg"],
+    "category": "Tecnología",
+    "subcategory": "Móviles",
+    "featured": true,
+    "description": "Pantalla AMOLED 6.7”, cámara triple 64MP y carga rápida de 45W."
+  },
+  {
+    "id": 12,
+    "name": "Portátil UltraBook 14”",
+    "price": 899.99,
+    "image": "/images/laptop.jpg",
+    "images": ["/images/laptop.jpg"],
+    "category": "Tecnología",
+    "subcategory": "Computadoras",
+    "featured": false,
+    "description": "Portátil liviano con 16GB RAM, SSD 512GB y procesador Intel i7."
+  },
+  {
+    "id": 13,
+    "name": "Cartera de cuero marrón",
+    "price": 34.99,
+    "image": "/images/wallet.jpg",
+    "images": ["/images/wallet.jpg"],
+    "category": "Accesorios",
+    "subcategory": "Carteras",
+    "featured": false,
+    "description": "Cartera de cuero con múltiples compartimentos y diseño elegante."
+  },
+  {
+    "id": 14,
+    "name": "Chaqueta Impermeable",
+    "price": 89.99,
+    "image": "/images/jacket.jpg",
+    "images": ["/images/jacket.jpg"],
+    "category": "Ropa",
+    "subcategory": "Chaquetas",
+    "featured": true,
+    "description": "Chaqueta ligera, resistente al agua y con capucha desmontable."
+  },
+  {
+    "id": 15,
+    "name": "Auriculares con cable Studio",
+    "price": 59.99,
+    "image": "/images/headphones-wired.jpg",
+    "images": ["/images/headphones-wired.jpg"],
+    "category": "Audio",
+    "subcategory": "Auriculares",
+    "featured": false,
+    "description": "Auriculares con cable de alta fidelidad para estudio y DJ."
   }
 ]

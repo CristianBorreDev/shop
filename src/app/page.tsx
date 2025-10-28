@@ -1,12 +1,12 @@
-import ProductList from "@/components/shop/ProductList";
+"use client";
+import HeroSlider from "@/components/home/HeroSlider";
+import FeaturedProducts from "@/components/home/FeaturedProducts";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <section className="max-w-6xl mx-auto">
-      <h1 className="text-2xl font-semibold mb-6 text-[var(--primary)]">
-        Productos Destacados
-      </h1>
-      <ProductList />
-    </section>
+    <>
+      <HeroSlider />
+      <FeaturedProducts />
+    </>
   );
 }

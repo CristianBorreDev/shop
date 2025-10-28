@@ -12,3 +12,34 @@ body {
   background-color: var(--background);
   color: var(--foreground);
 }
+
+/* Scrollbar general (Firefox y navegadores que usan scrollbar-color) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) #0a0a0a;
+}
+
+/* Chrome, Edge y Safari */
+::-webkit-scrollbar {
+  width: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body:hover ::-webkit-scrollbar {
+  opacity: 1;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary) 70%, #ffffff 30%));
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 60%, #ffffff 40%), color-mix(in srgb, var(--primary) 90%, #ffffff 10%));
+}

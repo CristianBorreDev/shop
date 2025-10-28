@@ -3,5 +3,9 @@ export interface Product {
   name: string;
   price: number;
   image: string;
+  images?: string[];
   category: string;
+  subcategory?: string;   // ✅ opcional
+  description?: string;
+  featured?: boolean;
 }
