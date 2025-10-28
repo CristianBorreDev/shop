@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta Negra",
+    "price": 19.99,
+    "image": "/images/shirt-black.jpg",
+    "category": "Ropa"
+  },
+  {
+    "id": 2,
+    "name": "Zapatillas Urbanas",
+    "price": 49.99,
+    "image": "/images/sneakers.jpg",
+    "category": "Calzado"
+  }
+]
