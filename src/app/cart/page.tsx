@@ -58,7 +58,6 @@ export default function CartPage() {
                   <div className="relative w-28 h-28 flex-shrink-0">
                     <Image
                       src={
-                        item.variant?.image ||
                         item.product.image ||
                         item.product.images?.[0] ||
                         "/images/placeholder.png"
