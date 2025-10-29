@@ -1,166 +1,528 @@
 [
   {
     "id": 1,
-    "name": "Auriculares inalámbricos Pro",
-    "price": 79.99,
-    "image": "/images/headphones.jpg",
-    "images": ["/images/headphones.jpg", "/images/headphones-2.jpg"],
-    "category": "Audio",
-    "subcategory": "Auriculares",
+    "name": "Auriculares Inalámbricos Pro",
+    "slug": "auriculares-inalambricos-pro",
+    "price": 129.99,
+    "oldPrice": 159.99,
+    "images": ["/images/products/auriculares1.jpg", "/images/products/auriculares2.jpg"],
+    "image": "/images/products/auriculares1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Audio",
+    "brand": "SoundMax",
+    "stock": 42,
     "featured": true,
-    "description": "Auriculares Bluetooth con cancelación activa de ruido, 30h de batería y micrófono integrado."
+    "description": "Auriculares inalámbricos con cancelación de ruido activa, batería de 30 horas y carga rápida.",
+    "shortDescription": "Sonido premium y cancelación de ruido.",
+    "specifications": { "Conectividad": "Bluetooth 5.2", "Autonomía": "30h", "Micrófono": "Sí" },
+    "variantGroups": [
+      {
+        "name": "Color",
+        "options": [
+          { "id": "black", "label": "Negro", "image": "/images/products/auriculares1.jpg", "colorHex": "#000000" },
+          { "id": "white", "label": "Blanco", "image": "/images/products/auriculares2.jpg", "colorHex": "#FFFFFF" }
+        ]
+      }
+    ],
+    "variants": [
+      { "id": "a1-black", "attributes": { "Color": "Negro" }, "stock": 24, "image": "/images/products/auriculares1.jpg" },
+      { "id": "a1-white", "attributes": { "Color": "Blanco" }, "stock": 18, "image": "/images/products/auriculares2.jpg" }
+    ],
+    "tags": ["audio", "bluetooth", "inalámbrico"],
+    "rating": 4.6,
+    "reviews": [
+      { "user": "Carlos", "rating": 5, "comment": "Excelente calidad de sonido.", "date": "2025-02-10" },
+      { "user": "Marta", "rating": 4, "comment": "Muy cómodos.", "date": "2025-03-15" }
+    ],
+    "createdAt": "2025-01-05",
+    "updatedAt": "2025-09-20"
   },
   {
     "id": 2,
-    "name": "Altavoz Bluetooth Mini",
+    "name": "Camiseta Deportiva DryFit",
+    "slug": "camiseta-deportiva-dryfit",
     "price": 29.99,
-    "image": "/images/speaker.jpg",
-    "images": ["/images/speaker.jpg"],
-    "category": "Audio",
-    "subcategory": "Altavoces",
-    "featured": true,
-    "description": "Altavoz portátil resistente al agua con 10h de reproducción."
+    "images": ["/images/products/camiseta1.jpg"],
+    "image": "/images/products/camiseta1.jpg",
+    "category": "Ropa",
+    "subcategory": "Camisetas",
+    "brand": "Nike",
+    "stock": 69,
+    "description": "Camiseta deportiva de secado rápido y tejido transpirable.",
+    "shortDescription": "Secado rápido y ajuste atlético.",
+    "specifications": { "Material": "Poliéster", "Tecnología": "DryFit" },
+    "variantGroups": [
+      { "name": "Color", "options": [
+        { "id": "black", "label": "Negro" },
+        { "id": "blue", "label": "Azul" }
+      ]},
+      { "name": "Talla", "options": [
+        { "id": "s", "label": "S" },
+        { "id": "m", "label": "M" },
+        { "id": "l", "label": "L" }
+      ]}
+    ],
+    "variants": [
+      { "id": "v-cam-s-black", "attributes": { "Color": "Negro", "Talla": "S" }, "stock": 10 },
+      { "id": "v-cam-m-black", "attributes": { "Color": "Negro", "Talla": "M" }, "stock": 8 },
+      { "id": "v-cam-s-blue", "attributes": { "Color": "Azul", "Talla": "S" }, "stock": 12 },
+      { "id": "v-cam-m-blue", "attributes": { "Color": "Azul", "Talla": "M" }, "stock": 6 }
+    ],
+    "tags": ["ropa", "deporte", "camiseta"],
+    "rating": 4.4,
+    "createdAt": "2025-04-12"
   },
   {
     "id": 3,
-    "name": "Barra de sonido 2.1",
-    "price": 149.99,
-    "image": "/images/soundbar.jpg",
-    "images": ["/images/soundbar.jpg"],
-    "category": "Audio",
-    "subcategory": "Altavoces",
-    "featured": false,
-    "description": "Barra de sonido con subwoofer inalámbrico y conexión HDMI ARC."
+    "name": "Smartwatch FitX 3",
+    "slug": "smartwatch-fitx-3",
+    "price": 99.99,
+    "oldPrice": 129.99,
+    "images": ["/images/products/smartwatch1.jpg"],
+    "image": "/images/products/smartwatch1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Wearables",
+    "brand": "FitX",
+    "stock": 60,
+    "featured": true,
+    "description": "Reloj inteligente con monitoreo cardíaco, oxígeno y GPS integrado.",
+    "specifications": { "Pantalla": "AMOLED 1.6\"", "Resistencia": "5 ATM", "Compatibilidad": "Android / iOS" },
+    "variantGroups": [
+      { "name": "Color", "options": [
+        { "id": "black", "label": "Negro" },
+        { "id": "silver", "label": "Plata" }
+      ]}
+    ],
+    "variants": [
+      { "id": "sw-black", "attributes": { "Color": "Negro" }, "stock": 35 },
+      { "id": "sw-silver", "attributes": { "Color": "Plata" }, "stock": 25 }
+    ],
+    "tags": ["smartwatch", "fitness", "wearable"],
+    "rating": 4.7,
+    "createdAt": "2025-02-20"
   },
   {
     "id": 4,
-    "name": "Camiseta Negra Premium",
-    "price": 19.99,
-    "image": "/images/shirt-black.jpg",
-    "images": ["/images/shirt-black.jpg"],
+    "name": "Zapatillas Urban Move",
+    "slug": "zapatillas-urban-move",
+    "price": 79.99,
+    "images": ["/images/products/zapatillas1.jpg"],
+    "image": "/images/products/zapatillas1.jpg",
     "category": "Ropa",
-    "subcategory": "Camisetas",
-    "featured": true,
-    "description": "Camiseta de algodón orgánico, corte regular, disponible en varias tallas."
+    "subcategory": "Calzado",
+    "brand": "Adidas",
+    "stock": 0,
+    "description": "Zapatillas urbanas cómodas y ligeras con suela antideslizante.",
+    "specifications": { "Material": "Textil", "Suela": "Goma EVA", "Uso": "Casual / Deportivo" },
+    "variantGroups": [
+      { "name": "Color", "options": [
+        { "id": "black", "label": "Negro" },
+        { "id": "white", "label": "Blanco" }
+      ]},
+      { "name": "Talla", "options": [
+        { "id": "40", "label": "40" },
+        { "id": "41", "label": "41" },
+        { "id": "42", "label": "42" },
+        { "id": "43", "label": "43" }
+      ]}
+    ],
+    "variants": [
+      { "id": "z-40-black", "attributes": { "Color": "Negro", "Talla": "40" }, "stock": 12 },
+      { "id": "z-42-black", "attributes": { "Color": "Negro", "Talla": "42" }, "stock": 20 },
+      { "id": "z-41-white", "attributes": { "Color": "Blanco", "Talla": "41" }, "stock": 10 },
+      { "id": "z-43-white", "attributes": { "Color": "Blanco", "Talla": "43" }, "stock": 8 }
+    ],
+    "rating": 4.3,
+    "createdAt": "2025-05-01"
   },
   {
     "id": 5,
-    "name": "Pantalón Jogger Unisex",
-    "price": 39.99,
-    "image": "/images/joggers.jpg",
-    "images": ["/images/joggers.jpg"],
-    "category": "Ropa",
-    "subcategory": "Pantalones",
-    "featured": false,
-    "description": "Joggers cómodos con bolsillos laterales y cintura elástica ajustable."
+    "name": "Teclado Mecánico RGB GX100",
+    "slug": "teclado-mecanico-rgb-gx100",
+    "price": 89.99,
+    "images": ["/images/products/teclado1.jpg"],
+    "image": "/images/products/teclado1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Periféricos",
+    "brand": "RedGear",
+    "stock": 35,
+    "description": "Teclado mecánico con retroiluminación RGB y switches rojos lineales.",
+    "specifications": { "Conexión": "USB-C", "Iluminación": "RGB", "Switches": "Red" },
+    "tags": ["teclado", "rgb", "gaming"],
+    "rating": 4.8,
+    "createdAt": "2025-03-10"
   },
   {
     "id": 6,
-    "name": "Zapatillas Urbanas",
-    "price": 49.99,
-    "image": "/images/sneakers.jpg",
-    "images": ["/images/sneakers.jpg"],
-    "category": "Calzado",
-    "subcategory": "Zapatillas",
-    "featured": false,
-    "description": "Zapatillas con suela de goma antideslizante y plantilla acolchada."
+    "name": "Cafetera Espresso HomeBarista",
+    "slug": "cafetera-espresso-homebarista",
+    "price": 249.99,
+    "oldPrice": 299.99,
+    "images": ["/images/products/cafetera1.jpg"],
+    "image": "/images/products/cafetera1.jpg",
+    "category": "Hogar",
+    "subcategory": "Cocina",
+    "brand": "HomeBarista",
+    "stock": 15,
+    "description": "Cafetera automática con molinillo integrado y espuma de leche.",
+    "specifications": { "Presión": "15 bares", "Capacidad": "1.5 L", "Potencia": "1450W" },
+    "rating": 4.9,
+    "createdAt": "2025-01-18"
   },
   {
     "id": 7,
-    "name": "Botines de Cuero",
-    "price": 89.99,
-    "image": "/images/boots.jpg",
-    "images": ["/images/boots.jpg"],
-    "category": "Calzado",
-    "subcategory": "Botines",
+    "name": "Monitor 27'' UltraSharp 4K",
+    "slug": "monitor-27-ultrasharp-4k",
+    "price": 399.99,
+    "images": ["/images/products/monitor1.jpg"],
+    "image": "/images/products/monitor1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Monitores",
+    "brand": "Dell",
+    "stock": 22,
     "featured": true,
-    "description": "Botines de cuero genuino, resistentes y elegantes para el uso diario."
+    "description": "Monitor IPS 4K UHD con calibración de color profesional.",
+    "specifications": { "Resolución": "3840x2160", "Frecuencia": "75Hz", "Puertos": "HDMI / DisplayPort" },
+    "rating": 4.9,
+    "createdAt": "2025-07-05"
   },
   {
     "id": 8,
-    "name": "Mochila Urbana",
-    "price": 59.99,
-    "image": "/images/backpack.jpg",
-    "images": ["/images/backpack.jpg"],
-    "category": "Accesorios",
-    "featured": true,
-    "description": "Mochila resistente, compartimento para laptop de 15\" y puerto USB."
+    "name": "Lámpara de Escritorio LED",
+    "slug": "lampara-de-escritorio-led",
+    "price": 24.99,
+    "images": ["/images/products/lampara1.jpg"],
+    "image": "/images/products/lampara1.jpg",
+    "category": "Hogar",
+    "subcategory": "Iluminación",
+    "brand": "Lumo",
+    "stock": 150,
+    "description": "Lámpara LED ajustable con control táctil y temperatura de color variable.",
+    "rating": 4.5,
+    "createdAt": "2025-05-22"
   },
   {
     "id": 9,
-    "name": "Gorra Snapback",
-    "price": 24.99,
-    "image": "/images/hat.jpg",
-    "images": ["/images/hat.jpg"],
-    "category": "Accesorios",
-    "subcategory": "Gorras",
-    "featured": false,
-    "description": "Gorra moderna con diseño ajustable y logo bordado."
+    "name": "Mochila Explorer 45L",
+    "slug": "mochila-explorer-45l",
+    "price": 59.99,
+    "images": ["/images/products/mochila1.jpg"],
+    "image": "/images/products/mochila1.jpg",
+    "category": "Deportes",
+    "subcategory": "Accesorios",
+    "brand": "NorthPeak",
+    "stock": 65,
+    "description": "Mochila resistente al agua ideal para senderismo y viajes.",
+    "rating": 4.6,
+    "createdAt": "2025-03-14"
   },
   {
     "id": 10,
-    "name": "Reloj Inteligente FitBand",
-    "price": 99.99,
-    "image": "/images/smartwatch.jpg",
-    "images": ["/images/smartwatch.jpg"],
-    "category": "Tecnología",
-    "subcategory": "Wearables",
-    "featured": true,
-    "description": "Reloj inteligente con monitor de ritmo cardíaco, pasos y notificaciones."
+    "name": "Batidora Compact Mix 500W",
+    "slug": "batidora-compact-mix-500w",
+    "price": 39.99,
+    "images": ["/images/products/batidora1.jpg"],
+    "image": "/images/products/batidora1.jpg",
+    "category": "Hogar",
+    "subcategory": "Cocina",
+    "brand": "KitchenPro",
+    "stock": 90,
+    "description": "Batidora de mano con 5 velocidades y vaso medidor de 600ml.",
+    "rating": 4.2,
+    "createdAt": "2025-04-02"
   },
   {
     "id": 11,
-    "name": "Smartphone X12",
-    "price": 499.99,
-    "image": "/images/smartphone.jpg",
-    "images": ["/images/smartphone.jpg"],
-    "category": "Tecnología",
-    "subcategory": "Móviles",
-    "featured": true,
-    "description": "Pantalla AMOLED 6.7”, cámara triple 64MP y carga rápida de 45W."
+    "name": "Silla Ergonómica OfficePro",
+    "slug": "silla-ergonomica-officepro",
+    "price": 189.99,
+    "images": ["/images/products/silla1.jpg"],
+    "image": "/images/products/silla1.jpg",
+    "category": "Oficina",
+    "subcategory": "Muebles",
+    "brand": "ErgoFit",
+    "stock": 25,
+    "description": "Silla ergonómica con soporte lumbar y ajuste de altura y respaldo.",
+    "rating": 4.8,
+    "createdAt": "2025-06-10"
   },
   {
     "id": 12,
-    "name": "Portátil UltraBook 14”",
-    "price": 899.99,
-    "image": "/images/laptop.jpg",
-    "images": ["/images/laptop.jpg"],
-    "category": "Tecnología",
-    "subcategory": "Computadoras",
-    "featured": false,
-    "description": "Portátil liviano con 16GB RAM, SSD 512GB y procesador Intel i7."
+    "name": "Pantalón Jogger Comfort",
+    "slug": "pantalon-jogger-comfort",
+    "price": 44.99,
+    "images": ["/images/products/pantalon1.jpg"],
+    "image": "/images/products/pantalon1.jpg",
+    "category": "Ropa",
+    "subcategory": "Pantalones",
+    "brand": "H&M",
+    "stock": 70,
+    "description": "Pantalón jogger de algodón suave con cintura elástica.",
+    "variantGroups": [
+      { "name": "Color", "options": [
+        { "id": "gray", "label": "Gris" },
+        { "id": "black", "label": "Negro" }
+      ]},
+      { "name": "Talla", "options": [
+        { "id": "s", "label": "S" },
+        { "id": "m", "label": "M" },
+        { "id": "l", "label": "L" }
+      ]}
+    ],
+    "variants": [
+      { "id": "pj-gray-s", "attributes": { "Color": "Gris", "Talla": "S" }, "stock": 15 },
+      { "id": "pj-gray-m", "attributes": { "Color": "Gris", "Talla": "M" }, "stock": 20 },
+      { "id": "pj-black-s", "attributes": { "Color": "Negro", "Talla": "S" }, "stock": 18 },
+      { "id": "pj-black-l", "attributes": { "Color": "Negro", "Talla": "L" }, "stock": 17 }
+    ],
+    "rating": 4.3,
+    "createdAt": "2025-02-25"
   },
   {
     "id": 13,
-    "name": "Cartera de cuero marrón",
-    "price": 34.99,
-    "image": "/images/wallet.jpg",
-    "images": ["/images/wallet.jpg"],
-    "category": "Accesorios",
-    "subcategory": "Carteras",
-    "featured": false,
-    "description": "Cartera de cuero con múltiples compartimentos y diseño elegante."
+    "name": "Tablet ZenTab 10.5",
+    "slug": "tablet-zentab-10-5",
+    "price": 279.99,
+    "images": ["/images/products/tablet1.jpg"],
+    "image": "/images/products/tablet1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Tablets",
+    "brand": "Asus",
+    "stock": 30,
+    "featured": true,
+    "description": "Tablet 10.5'' Full HD con procesador octa-core y 128GB de almacenamiento.",
+    "rating": 4.6,
+    "createdAt": "2025-03-05"
   },
   {
     "id": 14,
-    "name": "Chaqueta Impermeable",
-    "price": 89.99,
-    "image": "/images/jacket.jpg",
-    "images": ["/images/jacket.jpg"],
-    "category": "Ropa",
-    "subcategory": "Chaquetas",
-    "featured": true,
-    "description": "Chaqueta ligera, resistente al agua y con capucha desmontable."
+    "name": "Botella Térmica Inox 1L",
+    "slug": "botella-termica-inox-1l",
+    "price": 19.99,
+    "images": ["/images/products/botella1.jpg"],
+    "image": "/images/products/botella1.jpg",
+    "category": "Deportes",
+    "subcategory": "Hidratación",
+    "brand": "EcoSteel",
+    "stock": 200,
+    "description": "Botella térmica de acero inoxidable con tapa hermética.",
+    "rating": 4.7,
+    "createdAt": "2025-01-28"
   },
   {
     "id": 15,
-    "name": "Auriculares con cable Studio",
+    "name": "Sudadera Hoodie Classic",
+    "slug": "sudadera-hoodie-classic",
+    "price": 49.99,
+    "images": ["/images/products/sudadera1.jpg"],
+    "image": "/images/products/sudadera1.jpg",
+    "category": "Ropa",
+    "subcategory": "Sudaderas",
+    "brand": "Zara",
+    "stock": 55,
+    "description": "Sudadera con capucha y bolsillo frontal, suave al tacto.",
+    "variantGroups": [
+      { "name": "Color", "options":[ { "id":"gray","label":"Gris" }, { "id":"black","label":"Negro" } ]},
+      { "name": "Talla", "options":[ { "id":"s","label":"S" }, { "id":"m","label":"M" }, { "id":"l","label":"L" } ]}
+    ],
+    "variants": [
+      { "id": "sd-gray-s", "attributes": { "Color": "Gris", "Talla": "S" }, "stock": 12 },
+      { "id": "sd-gray-m", "attributes": { "Color": "Gris", "Talla": "M" }, "stock": 20 },
+      { "id": "sd-black-l", "attributes": { "Color": "Negro", "Talla": "L" }, "stock": 8 }
+    ],
+    "rating": 4.4,
+    "createdAt": "2025-02-14"
+  },
+  {
+    "id": 16,
+    "name": "Cámara Compacta SnapShot X10",
+    "slug": "camara-compacta-snapshot-x10",
+    "price": 299.99,
+    "oldPrice": 349.99,
+    "images": ["/images/products/camara1.jpg"],
+    "image": "/images/products/camara1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Fotografía",
+    "brand": "Canon",
+    "stock": 18,
+    "description": "Cámara digital compacta con zoom óptico 10x y grabación 4K.",
+    "rating": 4.8,
+    "createdAt": "2025-05-30"
+  },
+  {
+    "id": 17,
+    "name": "Set de Sartenes Antiadherentes",
+    "slug": "set-sartenes-antiadherentes",
     "price": 59.99,
-    "image": "/images/headphones-wired.jpg",
-    "images": ["/images/headphones-wired.jpg"],
-    "category": "Audio",
-    "subcategory": "Auriculares",
-    "featured": false,
-    "description": "Auriculares con cable de alta fidelidad para estudio y DJ."
+    "images": ["/images/products/sartenes1.jpg"],
+    "image": "/images/products/sartenes1.jpg",
+    "category": "Hogar",
+    "subcategory": "Cocina",
+    "brand": "ChefPro",
+    "stock": 45,
+    "description": "Juego de 3 sartenes antiadherentes de aluminio reforzado.",
+    "rating": 4.5,
+    "createdAt": "2025-04-15"
+  },
+  {
+    "id": 18,
+    "name": "Altavoz Bluetooth MiniBoom",
+    "slug": "altavoz-bluetooth-miniboom",
+    "price": 39.99,
+    "images": ["/images/products/altavoz1.jpg"],
+    "image": "/images/products/altavoz1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Audio",
+    "brand": "JBL",
+    "stock": 90,
+    "description": "Altavoz portátil Bluetooth resistente al agua con 10h de batería.",
+    "variantGroups": [
+      { "name": "Color", "options":[ { "id":"black","label":"Negro" }, { "id":"red","label":"Rojo" }, { "id":"blue","label":"Azul" } ]}
+    ],
+    "variants": [
+      { "id": "mb-black", "attributes": { "Color": "Negro" }, "stock": 40 },
+      { "id": "mb-red", "attributes": { "Color": "Rojo" }, "stock": 30 },
+      { "id": "mb-blue", "attributes": { "Color": "Azul" }, "stock": 20 }
+    ],
+    "rating": 4.6,
+    "createdAt": "2025-07-12"
+  },
+  {
+    "id": 19,
+    "name": "Gorra Classic Fit",
+    "slug": "gorra-classic-fit",
+    "price": 24.99,
+    "images": ["/images/products/gorra1.jpg"],
+    "image": "/images/products/gorra1.jpg",
+    "category": "Ropa",
+    "subcategory": "Accesorios",
+    "brand": "NewEra",
+    "stock": 130,
+    "description": "Gorra ajustable estilo clásico con logo bordado.",
+    "variantGroups": [
+      { "name": "Color", "options":[ { "id":"black","label":"Negra" }, { "id":"white","label":"Blanca" }, { "id":"red","label":"Roja" } ]}
+    ],
+    "variants": [
+      { "id": "g-black", "attributes": { "Color": "Negra" }, "stock": 60 },
+      { "id": "g-white", "attributes": { "Color": "Blanca" }, "stock": 40 },
+      { "id": "g-red", "attributes": { "Color": "Roja" }, "stock": 30 }
+    ],
+    "rating": 4.3,
+    "createdAt": "2025-08-01"
+  },
+  {
+    "id": 20,
+    "name": "Bicicleta de Montaña Trail 500",
+    "slug": "bicicleta-montana-trail-500",
+    "price": 699.99,
+    "images": ["/images/products/bicicleta1.jpg"],
+    "image": "/images/products/bicicleta1.jpg",
+    "category": "Deportes",
+    "subcategory": "Ciclismo",
+    "brand": "RockRider",
+    "stock": 10,
+    "featured": true,
+    "description": "Bicicleta de montaña con suspensión delantera y cuadro de aluminio.",
+    "rating": 4.9,
+    "createdAt": "2025-06-20"
+  },
+  {
+    "id": 21,
+    "name": "Mouse Inalámbrico SilentClick",
+    "slug": "mouse-inalambrico-silentclick",
+    "price": 24.99,
+    "images": ["/images/products/mouse1.jpg"],
+    "image": "/images/products/mouse1.jpg",
+    "category": "Tecnología",
+    "subcategory": "Periféricos",
+    "brand": "Logitech",
+    "stock": 70,
+    "description": "Mouse inalámbrico silencioso con sensor óptico de alta precisión.",
+    "variantGroups": [
+      { "name": "Color", "options":[ { "id":"black","label":"Negro" }, { "id":"gray","label":"Gris" } ]}
+    ],
+    "variants": [
+      { "id": "m-black", "attributes": { "Color": "Negro" }, "stock": 40 },
+      { "id": "m-gray", "attributes": { "Color": "Gris" }, "stock": 30 }
+    ],
+    "rating": 4.5,
+    "createdAt": "2025-09-10"
+  },
+  {
+    "id": 22,
+    "name": "Chaqueta Windbreaker Pro",
+    "slug": "chaqueta-windbreaker-pro",
+    "price": 69.99,
+    "images": ["/images/products/chaqueta1.jpg"],
+    "image": "/images/products/chaqueta1.jpg",
+    "category": "Ropa",
+    "subcategory": "Chaquetas",
+    "brand": "Columbia",
+    "stock": 60,
+    "description": "Chaqueta rompevientos ligera e impermeable ideal para exteriores.",
+    "variantGroups": [
+      { "name": "Color", "options":[ { "id":"blue","label":"Azul" }, { "id":"black","label":"Negro" } ]},
+      { "name": "Talla", "options":[ { "id":"s","label":"S" }, { "id":"m","label":"M" }, { "id":"l","label":"L" } ]}
+    ],
+    "variants": [
+      { "id": "ch-blue-s", "attributes": { "Color": "Azul", "Talla": "S" }, "stock": 10 },
+      { "id": "ch-blue-m", "attributes": { "Color": "Azul", "Talla": "M" }, "stock": 20 },
+      { "id": "ch-black-l", "attributes": { "Color": "Negro", "Talla": "L" }, "stock": 30 }
+    ],
+    "rating": 4.6,
+    "createdAt": "2025-08-05"
+  },
+  {
+    "id": 23,
+    "name": "Auriculares DockStation (USB-C)",
+    "slug": "auriculares-dockstation-usb-c",
+    "price": 59.99,
+    "images": ["/images/products/auriculares2.jpg"],
+    "image": "/images/products/auriculares2.jpg",
+    "category": "Tecnología",
+    "subcategory": "Audio",
+    "brand": "DockStation",
+    "stock": 50,
+    "description": "Auriculares con conexión USB-C para PC, sonido nítido y micrófono omnidireccional.",
+    "variantGroups": [
+      { "name": "Color", "options":[ { "id":"black","label":"Negro" }, { "id":"white","label":"Blanco" } ]}
+    ],
+    "variants": [
+      { "id": "ds-black", "attributes": { "Color": "Negro" }, "stock": 30 },
+      { "id": "ds-white", "attributes": { "Color": "Blanco" }, "stock": 20 }
+    ],
+    "rating": 4.4,
+    "createdAt": "2025-09-01"
+  },
+  {
+    "id": 24,
+    "name": "Colchón SleepWell 90x190",
+    "slug": "colchon-sleepwell-90x190",
+    "price": 249.99,
+    "images": ["/images/products/colchon1.jpg"],
+    "image": "/images/products/colchon1.jpg",
+    "category": "Hogar",
+    "subcategory": "Descanso",
+    "brand": "SleepWell",
+    "stock": 12,
+    "description": "Colchón de espuma viscoelástica de alta densidad para soporte y confort.",
+    "specifications": { "Medidas": "90x190 cm", "Altura": "20 cm", "Material": "Viscoelástica" },
+    "rating": 4.7,
+    "createdAt": "2025-06-01"
+  },
+  {
+    "id": 25,
+    "name": "Kit Running Pro (Botella + Banda + Guantes)",
+    "slug": "kit-running-pro",
+    "price": 34.99,
+    "images": ["/images/products/kit_running.jpg"],
+    "image": "/images/products/kit_running.jpg",
+    "category": "Deportes",
+    "subcategory": "Accesorios",
+    "brand": "RunFast",
+    "stock": 95,
+    "description": "Kit esencial para corredores: botella térmica, banda reflectante y guantes ligeros.",
+    "rating": 4.5,
+    "createdAt": "2025-07-20"
   }
 ]

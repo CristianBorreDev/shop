@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="relative" ref={ref}>
             <button
               onClick={() => setOpen((v) => !v)}
-              className="flex items-center gap-1 hover:text-[var(--primary)]"
+              className="flex cursor-pointer items-center gap-1 hover:text-[var(--primary)]"
               aria-expanded={open}
             >
               Categorías <ChevronDown size={16} />
