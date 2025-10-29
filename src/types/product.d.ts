@@ -17,7 +17,7 @@ export interface Product {
   featured?: boolean;                  // Si es destacado
   description: string;                 // Descripción larga
   shortDescription?: string;           // Descripción corta
-  specifications?: any; // Ficha técnica
+  specifications?: JSONObject; // Ficha técnica
   variantGroups?: VariantGroup[];      // Grupos de variantes (Color, Talla, etc.)
   variants?: Variant[];                // Combinaciones finales de variantes
   tags?: string[];                     // Palabras clave

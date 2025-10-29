@@ -8,7 +8,7 @@ import { useCartStore } from "@/lib/store";
 import type { Product } from "@/types/product";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ShoppingCart, Star, Check, Shield, Truck, CreditCard } from "lucide-react";
+import { ShoppingCart, Star, Check, Truck, CreditCard } from "lucide-react";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -48,12 +48,27 @@ export default function ProductDetail() {
       }
     }
 
-    const selectedVariant =
-      product.variants?.find((v) =>
-        Object.entries(selectedOptions).every(
-          ([key, val]) => v.attributes?.[key] === val
-        )
-      ) || null;
+
+    const findSelectedVariant = () => {
+      if (!product.variants || product.variants.length === 0) return undefined;
+      const keys = product.variantGroups?.map((g) => g.name) ?? Object.keys(selectedOptions);
+      return product.variants.find((v) =>
+        keys.every((key) => {
+          const sel = selectedOptions[key];
+          const attr = v.attributes?.[key];
+          if (sel === undefined) return false;
+          return String(attr) === String(sel);
+        })
+      );
+    };
+
+    const selectedVariant = findSelectedVariant();
+
+    const availableStock = selectedVariant?.stock ?? product.stock;
+    if ((availableStock ?? 0) <= 0) {
+      alert("La variante seleccionada no tiene stock disponible.");
+      return;
+    }
 
     addToCart(product, selectedVariant);
     setAdded(true);
@@ -187,7 +202,7 @@ export default function ProductDetail() {
           </div>
 
           {/* Variantes */}
-          {product.variantGroups?.length > 0 && (
+          {product.variantGroups && product.variantGroups?.length > 0 && (
             <div className="mb-6 space-y-4">
               {product.variantGroups.map((group) => (
                 <div key={group.name}>
