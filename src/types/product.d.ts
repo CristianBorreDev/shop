@@ -17,7 +17,7 @@ export interface Product {
   featured?: boolean;                  // Si es destacado
   description: string;                 // Descripción larga
   shortDescription?: string;           // Descripción corta
-  specifications?: Record<string, string>; // Ficha técnica
+  specifications?: Record<string, string> | undefined; // Ficha técnica
   variantGroups?: VariantGroup[];      // Grupos de variantes (Color, Talla, etc.)
   variants?: Variant[];                // Combinaciones finales de variantes
   tags?: string[];                     // Palabras clave
