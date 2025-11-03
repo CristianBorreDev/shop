@@ -9,6 +9,7 @@ import type { Product } from "@/types/product";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ShoppingCart, Star, Check, Truck, CreditCard } from "lucide-react";
+import Swal from "sweetalert2";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -43,7 +44,11 @@ export default function ProductDetail() {
     if (product.variantGroups?.length) {
       const allSelected = product.variantGroups.every((g) => selectedOptions[g.name]);
       if (!allSelected) {
-        alert("Selecciona todas las variantes antes de continuar.");
+        Swal.fire({
+          title: "",
+          icon: "info",
+          text: "Selecciona todas las variantes antes de continuar."
+        });
         return;
       }
     }
@@ -63,12 +68,6 @@ export default function ProductDetail() {
     };
 
     const selectedVariant = findSelectedVariant();
-
-    const availableStock = selectedVariant?.stock ?? product.stock;
-    if ((availableStock ?? 0) <= 0) {
-      alert("La variante seleccionada no tiene stock disponible.");
-      return;
-    }
 
     addToCart(product, selectedVariant);
     setAdded(true);

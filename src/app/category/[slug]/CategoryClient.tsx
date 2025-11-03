@@ -29,7 +29,7 @@ export default function CategoryClient({
   const filteredAndSorted = useMemo(() => {
     let list = products;
 
-    if(decodedQuery){
+    if (decodedQuery) {
       const q = decodedQuery.toLowerCase();
       list = list.filter(
         (p) =>
@@ -38,7 +38,6 @@ export default function CategoryClient({
           p.category.toLowerCase().includes(q) ||
           p.subcategory?.toLowerCase().includes(q)
       );
-      
     }
 
     // filtro por categoria/sub
@@ -71,16 +70,21 @@ export default function CategoryClient({
     }
 
     return copy;
-  }, [products, decodedSlug, decodedSub, sort]);
+  }, [products, decodedSlug, decodedSub, decodedQuery, sort]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">
       <h1 className="text-2xl font-bold mb-4 text-[var(--primary)] capitalize">
-        {decodedSlug === "all" || decodedSlug === "todos" ? "Todos los productos" : decodedSlug}
-        {decodedSub && ` / ${decodedSub}`}
+        {decodedQuery
+          ? `Resultados para "${decodedQuery}"`
+          : decodedSlug === "all" || decodedSlug === "todos"
+            ? "Todos los productos" : decodedSlug}
+        {decodedSub && decodedQuery && ` / ${decodedSub}`}
       </h1>
 
-      <ProductFilters currentCategory={decodedSlug} currentSub={decodedSub || ""} />
+      {!decodedQuery && (
+        <ProductFilters currentCategory={decodedSlug} currentSub={decodedSub || ""} />
+      )}
 
       <ProductGrid products={filteredAndSorted} />
     </div>

@@ -43,8 +43,8 @@ export default function CartPage() {
 
               const variantAttrs = item.variant?.attributes
                 ? Object.entries(item.variant.attributes)
-                    .map(([k, v]) => `${k}: ${v}`)
-                    .join(" • ")
+                  .map(([k, v]) => `${k}: ${v}`)
+                  .join(" • ")
                 : null;
 
               return (
@@ -176,9 +176,12 @@ export default function CartPage() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <button className="bg-[var(--primary)] text-black px-6 py-2.5 rounded-lg font-medium hover:bg-cyan-300 transition">
+              <Link
+                href="/checkout"
+                className="bg-[var(--primary)] text-center text-black px-6 py-2.5 rounded-lg font-medium hover:bg-cyan-300 transition"
+              >
                 Finalizar compra
-              </button>
+              </Link>
 
               <Link
                 href="/category/all"

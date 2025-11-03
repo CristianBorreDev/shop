@@ -34,7 +34,7 @@ export default function Navbar() {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!search.trim()) return;
-    router.push(`/search?q=${encodeURIComponent(search.trim())}`);
+    router.push(`/category/all?q=${encodeURIComponent(search.trim())}`);
     setSearch("");
     setShowSearch(false);
   };
