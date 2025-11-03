@@ -4,14 +4,14 @@ import CategoryClient from "./CategoryClient";
 
 export default function CategoryPage(props: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ sub?: string }>;
+  searchParams: Promise<{ sub?: string, q?: string }>;
 }) {
   const { slug } = use(props.params);
-  const { sub } = use(props.searchParams);
+  const { sub, q } = use(props.searchParams);
 
   const products = Array.isArray(productsData) ? productsData : [];
 
   return (
-    <CategoryClient slug={slug} sub={sub ?? ""} products={products} />
+    <CategoryClient slug={slug} sub={sub ?? ""} query={q ?? ""} products={products} />
   );
 }

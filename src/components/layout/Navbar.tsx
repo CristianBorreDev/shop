@@ -1,16 +1,20 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { ShoppingCart, ChevronDown, ChevronRight } from "lucide-react";
+import { ShoppingCart, ChevronDown, ChevronRight, Search } from "lucide-react";
 import { getCategories } from "@/lib/categories";
 import { useCartStore } from "@/lib/store";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const categories = getCategories(); // { [category]: [subcategories] }
   const { cart, hasHydrated } = useCartStore();
+  const router = useRouter();
 
   const [open, setOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
+  const [showSearch, setShowSearch] = useState(false); // para mobile
   const ref = useRef<HTMLDivElement | null>(null);
 
   // 🔒 Cierra menús al hacer click fuera
@@ -26,6 +30,14 @@ export default function Navbar() {
   }, []);
 
   const toSlug = (s: string) => encodeURIComponent(s.toLowerCase());
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!search.trim()) return;
+    router.push(`/search?q=${encodeURIComponent(search.trim())}`);
+    setSearch("");
+    setShowSearch(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-[var(--accent)] border-b border-neutral-800">
@@ -116,7 +128,9 @@ export default function Navbar() {
                           {subs.map((sub) => (
                             <Link
                               key={sub}
-                              href={`/category/${toSlug(cat)}?sub=${toSlug(sub)}`}
+                              href={`/category/${toSlug(cat)}?sub=${toSlug(
+                                sub
+                              )}`}
                               className="block px-4 py-2 text-sm hover:bg-neutral-800"
                               onClick={() => {
                                 setOpen(false);
@@ -136,18 +150,71 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* NAV DERECHA */}
-        <nav className="flex items-center gap-6">
-          <Link href="/cart" className="relative">
-            <ShoppingCart size={22} />
-            {hasHydrated && cart.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-[var(--primary)] text-black text-xs rounded-full px-1.5">
-                {cart.length}
-              </span>
-            )}
-          </Link>
-        </nav>
+        {/* 🔍 BUSCADOR */}
+        <div className="flex gap-5">
+          <div className="flex-1 hidden md:flex justify-center">
+            <form
+              onSubmit={handleSearchSubmit}
+              className="relative w-full max-w-xs"
+            >
+              <input
+                type="text"
+                placeholder="Buscar productos..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full rounded-lg bg-neutral-900 border border-neutral-800 px-3 py-1.5 text-sm focus:outline-none focus:border-[var(--primary)]"
+              />
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-[var(--primary)]"
+              >
+                <Search size={16} />
+              </button>
+            </form>
+          </div>
+
+          {/* NAV DERECHA */}
+          <nav className="flex items-center gap-6">
+            <button
+              onClick={() => setShowSearch((s) => !s)}
+              className="md:hidden hover:text-[var(--primary)]"
+              aria-label="Buscar"
+            >
+              {showSearch ? <X size={20} /> : <Search size={20} />}
+            </button>
+
+            <Link href="/cart" className="relative">
+              <ShoppingCart size={22} />
+              {hasHydrated && cart.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[var(--primary)] text-black text-xs rounded-full px-1.5">
+                  {cart.length}
+                </span>
+              )}
+            </Link>
+          </nav>
+        </div>
       </div>
+
+      {/* Buscador desplegable móvil */}
+      {showSearch && (
+        <div className="md:hidden border-t border-neutral-800 bg-[var(--accent)] px-4 py-2">
+          <form onSubmit={handleSearchSubmit} className="relative">
+            <input
+              type="text"
+              placeholder="Buscar productos..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full rounded-lg bg-neutral-900 border border-neutral-800 px-3 py-2 text-sm focus:outline-none focus:border-[var(--primary)]"
+            />
+            <button
+              type="submit"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-[var(--primary)]"
+            >
+              <Search size={16} />
+            </button>
+          </form>
+        </div>
+      )}
     </header>
   );
 }

@@ -9,15 +9,18 @@ import { Product } from "@/types/product";
 export default function CategoryClient({
   slug,
   sub,
+  query,
   products,
 }: {
   slug: string;
   sub: string;
+  query?: string;
   products: Product[];
 }) {
   // decodificamos los valores
   const decodedSlug = decodeURIComponent(slug || "");
   const decodedSub = decodeURIComponent(sub || "");
+  const decodedQuery = decodeURIComponent(query || "");
 
   // leemos sort desde searchParams
   const searchParams = useSearchParams();
@@ -25,6 +28,18 @@ export default function CategoryClient({
 
   const filteredAndSorted = useMemo(() => {
     let list = products;
+
+    if(decodedQuery){
+      const q = decodedQuery.toLowerCase();
+      list = list.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.subcategory?.toLowerCase().includes(q)
+      );
+      
+    }
 
     // filtro por categoria/sub
     if (!(decodedSlug.toLowerCase() === "all" || decodedSlug.toLowerCase() === "todos")) {
